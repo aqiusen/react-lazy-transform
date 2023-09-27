@@ -9,7 +9,7 @@
   ],
   "icon": "lazy.png",
   "description": "这个是一个快速将react组件转换为路由懒加载的工具",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.82.0"
   },
@@ -36,11 +36,11 @@
     "commands": [
       {
         "command": "lazy-router-transform.handleFile",
-        "title": "transform lazy Router"
+        "title": "Transform Lazy Router"
       },
       {
         "command": "lazy-router-transform.getPath",
-        "title": "transform lazy Router"
+        "title": "Transform Lazy Router"
       }
     ],
     "menus": {
