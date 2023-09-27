@@ -1,0 +1,1 @@
+vscode小插件，用于将component:xxx转化为component:lazy写法

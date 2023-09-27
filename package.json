@@ -1,0 +1,86 @@
+{
+  "name": "lazy-router-transform",
+  "displayName": "lazy-router-transform",
+  "publisher": "dasenge",
+  "keywords": [
+    "react",
+    "router",
+    "lazy"
+  ],
+  "icon": "lazy.png",
+  "description": "这个是一个快速将react组件转换为路由懒加载的工具",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "lazy-router-transform.handleFile",
+    "lazy-router-transform.getPath"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "lazy-router-transform插件设置",
+      "properties": {
+        "lazy-router-transform.showComfirm": {
+          "type": "boolean",
+          "default": true,
+          "description": "转换之前是否显示提示框"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "lazy-router-transform.handleFile",
+        "title": "transform lazy Router"
+      },
+      {
+        "command": "lazy-router-transform.getPath",
+        "title": "transform lazy Router"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorFocus && (resourceExtname == .js || resourceExtname == .ts || resourceExtname == .tsx || resourceExtname == .jsx)",
+          "command": "lazy-router-transform.handleFile",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "lazy-router-transform.getPath",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.82.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6",
+    "@vscode/test-electron": "^2.3.4"
+  },
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "bugs": {
+    "url": "https://github.com/aqiusen/react-lazy-transform/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aqiusen/react-lazy-transform"
+  },
+  "homepage": "https://github.com/aqiusen/react-lazy-transform/blob/main/README.md"
+}
