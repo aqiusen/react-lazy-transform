@@ -9,7 +9,7 @@
   ],
   "icon": "lazy.png",
   "description": "这个是一个快速将react组件转换为路由懒加载的工具",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.82.0"
   },
