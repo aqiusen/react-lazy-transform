@@ -67,10 +67,21 @@ function replaceComponentPath(filePath) {
             ImportDeclaration: (path, state) => {
                 const importName = path.node.specifiers[0].local.name
                 ImportMaps[importName] = path.node.source.value
-                path.remove();
+                if(!ImportMaps[importName].includes("@/routes/")) {
+                    path.remove();
+                }
             },
             VariableDeclaration: (path, state) => {
                 const elements = path.node.declarations[0].init.elements;
+                handleELements(ImportMaps, elements);
+            },
+            /**
+             * 为了支持export default [{}] 这种类型写法
+             * @param {*} path
+             * @param {*} state
+             */
+            ExportDefaultDeclaration: (path, state) => {
+                const elements = path.node.declaration.elements;
                 handleELements(ImportMaps, elements);
             }
         })

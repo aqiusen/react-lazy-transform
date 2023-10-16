@@ -9,7 +9,7 @@
   ],
   "icon": "lazy.png",
   "description": "这个是一个快速将react组件转换为路由懒加载的工具",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.82.0"
   },
@@ -64,11 +64,13 @@
     "pretest": "npm run lint",
     "test": "node ./test/runTest.js"
   },
-  "devDependencies": {
+  "dependencies": {
     "@babel/generator": "^7.23.0",
     "@babel/parser": "^7.23.0",
     "@babel/traverse": "^7.23.0",
-    "@babel/types": "^7.23.0",
+    "@babel/types": "^7.23.0"
+  },
+  "devDependencies": {
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
     "@types/vscode": "^1.82.0",
